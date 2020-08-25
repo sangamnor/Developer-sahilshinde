@@ -1,0 +1,66 @@
+<html>
+	<head> 
+		<title>Registration Form</title>
+	</head>
+<body>
+<header>
+<nav style="text-align:center;">
+This is a Header & Menu Section
+</nav>
+</header> <br><br>
+<section>
+<article style="text-align:center;">
+Please Fill Up following form for Registration
+<form name="register" action="register.php" method="POST">
+<table  align="center">
+<tr>
+<td colspan="2" style="text-align:center;">Registration Form </td>
+</tr>
+<tr>
+<td>Name</td>
+<td><input type="text" name="r_name" id="r_name"></td>
+</tr>
+<tr>
+<td>Email</td>
+<td><input type="email" name="email" id="email" onblur="ValidateEmail(this.value);"></td>
+</tr>
+<tr>
+<td colspan="2" style="text-align:center;"> <input type="button" Value="Submit" onclick="validate();"></tr>
+</tr>
+</table>
+</form>
+</article>
+</section>
+<footer style="text-align:center;">
+This is Footer Section
+</footer>
+</body>
+<script language="javascript">
+function validate()
+{ alert("hI");
+   var name = document.getElementById('r_name').value;
+   var a = isNaN(name);
+   var email = document.getElementById('email').value;
+   if(email=="")
+   {
+   alert("email should not be empty");
+   }else if(name == "")
+   {
+   alert("name should not be empty");
+   }else if(!a)
+   {
+   alert("Numbers not Allowed in Name field");
+   }
+}
+function ValidateEmail(mail) 
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(register.email.value))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+}
+</script>
+
+</html>
